@@ -7,6 +7,7 @@
                     :key="task.id"
                     :task="task"
                     v-on:complete-task="completeTask"
+                    v-on:delete-task="deleteTask"
                 />
             </div>
 
@@ -48,6 +49,9 @@ export default {
                     this.taskList[i].complete = !task.complete;
                 }
             }
+        },
+        deleteTask(id) {
+            this.taskList = this.taskList.filter(item => item.id !== id);
         }
     }
 }
