@@ -1,4 +1,4 @@
-# taskify
+# Taskify
 
 ## Project setup
 ```
