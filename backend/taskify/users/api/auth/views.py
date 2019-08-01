@@ -54,11 +54,12 @@ class UserRegisterAPIView(APIView):
 
     def post(self, request, *args, **kwargs):
         data = request.data
-        print(data)
-        fullname = data.get('fullname.fullname', None)
+        fullname = data.get('fullname', None)
         username = data.get('username', None)
         email = data.get('email', None)
         password = data.get('password', None)
+
+        print(fullname)
 
         if fullname == "" and username == "" and email == "" and password == "":
             return Response("All fields are required", status=400)
