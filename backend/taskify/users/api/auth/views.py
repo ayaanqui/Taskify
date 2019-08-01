@@ -7,17 +7,12 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 from rest_framework.response import Response
 
-from rest_framework_jwt.settings import api_settings
+# Simple JWT
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from users.models import Profile
-from users.api.serializers import UserSerializer, UserAuthSerializer, UserRegisterSerializer
+from users.api.serializers import UserSerializer, UserAuthSerializer, UserRegisterSerializer, UserPrivateSerializer
 from users.api.auth.permissions import AnonymousPermissionOnly
-
-# Creating JWT token
-jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
-jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
-jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
-
 
 class UserAuthAPIView(APIView):
     serializer_class = UserAuthSerializer
@@ -42,13 +37,15 @@ class UserAuthAPIView(APIView):
                 user = authenticate(username=qs.username, password=password)
                 # login(request, user)
 
-                payload = jwt_payload_handler(user)
-                token = jwt_encode_handler(payload)
-
-                response = jwt_response_payload_handler(token, user, request=request)
+                refresh = RefreshToken.for_user(user)
+                response = {
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                    'user': UserPrivateSerializer(user).data
+                }
                 return Response(response, status=200)
         
-        return Response({"detail": "Incorret username/email or password"}, status=401)
+        return Response({"detail": "Incorrect username/email or password"}, status=401)
 
 
 class UserRegisterAPIView(APIView):

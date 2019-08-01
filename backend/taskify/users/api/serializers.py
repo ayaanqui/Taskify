@@ -22,6 +22,24 @@ class UserSerializer(serializers.ModelSerializer):
         return UserProfileSerializer(qs.first()).data
 
 
+class UserPrivateSerializer(serializers.ModelSerializer):
+    profile = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = [
+            'id',
+            'username',
+            'profile',
+            'email'
+        ]
+    
+    def get_profile(self, obj):
+        user = User.objects.get(id=obj.id)
+        qs = Profile.objects.filter(user=user)
+        return UserProfileSerializer(qs.first()).data
+
+
 class UserAuthSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

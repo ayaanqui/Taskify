@@ -12,6 +12,7 @@ markdown = "*"
 djangorestframework-jwt = "*"
 django-filter = "*"
 pillow = "*"
+djangorestframework-simplejwt = "*"
 
 [requires]
 python_version = "3.7"
