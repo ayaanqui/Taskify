@@ -58,9 +58,7 @@ class UserRegisterAPIView(APIView):
         username = data.get('username', None)
         email = data.get('email', None)
         password = data.get('password', None)
-
-        print(fullname)
-
+        
         if fullname == "" and username == "" and email == "" and password == "":
             return Response("All fields are required", status=400)
         
