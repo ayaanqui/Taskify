@@ -15,7 +15,8 @@ class TaskListSerializer(serializers.ModelSerializer):
             'detail',
             'completed',
             'user',
-            'due'
+            'due',
+            'priority'
         ]
         read_only_fields = ['id', 'completed', 'user']
     
