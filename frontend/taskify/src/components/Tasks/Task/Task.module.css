@@ -1,0 +1,55 @@
+.taskView {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.taskView > .checklist {
+    padding: 10px 20px;
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+    color: #444444;
+    cursor: pointer;
+}
+
+.checkNotComplete,
+.checkComplete {
+    text-decoration: none !important;
+}
+
+.checklist > .checkNotComplete {
+    color: #444444;
+}
+.checklist > .checkNotComplete:before {
+    content: "\f145";
+}
+
+.checklist > .checkComplete {
+    color: #999999;
+}
+.checklist > .checkComplete:before {
+    content: "\f146";
+}
+
+.taskView > .taskDetails {
+    padding: 10px 10px;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #444444;
+}
+
+.taskDetails .taskCompleted {
+    color: #999999 !important;
+    text-decoration: line-through !important;
+}
+
+.taskView > .taskControls {
+    padding: 10px 20px;
+    font-size: 11px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}

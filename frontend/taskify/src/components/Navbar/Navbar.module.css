@@ -1,0 +1,53 @@
+.header {
+    margin: 20px 0px;
+}
+
+.headerInner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Bahnschrift" !important;
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+.logo:before {
+    content: "Taskify";
+}
+
+.headerInner > .logo {
+    color: #444;
+    font-size: 20px;
+    padding-right: 20px;
+    /* border-right: 1px solid#eeeeee; */
+    height: inherit;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.menuItems {
+    padding-left: 20px;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 13px;
+}
+
+.menuItems > .menuItem {
+    margin-right: 15px;
+    cursor: pointer;
+}
+.menuItems > .menuItem:last-child {
+    margin-right: 0px;
+}

@@ -1,0 +1,131 @@
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+  margin: 0px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.main-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.content-body {
+  margin-top: 50px;
+}
+
+.form-body-manager {
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid#eeeeee;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bahnschrift";
+}
+
+.form-body-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-body-title > h3 {
+  margin: 0px;
+}
+
+label {
+  font-size: 12px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.remember-me {
+  margin-bottom: 30px;
+}
+
+.form-body-submit {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.form-body-submit > .submit-button {
+  width: 100%;
+  outline: none;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px 10px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+}
+
+.form-body-submit > .login {
+  background-color: #007bff;
+}
+
+.primary-button {
+  flex: 2;
+}
+
+.secondary-button {
+  flex: 1;
+}
+
+.form-body-submit > span {
+  display: block;
+  flex: .5;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-body-submit > .register {
+  background-color: #6b6b6b;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.input-group .input-container {
+  margin: 0px 5px;
+}
+
+.input-group .input-container:first-child {
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+.input-group .input-container:last-child {
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+.input-container .form-text,
+.input-container .text-muted {
+  display: none;
+}
+
+.icon-left {
+  margin-left: 10px;
+}
+
+.icon-right {
+  margin-right: 10px
+}

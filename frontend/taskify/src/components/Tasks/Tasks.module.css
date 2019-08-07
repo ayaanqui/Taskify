@@ -1,0 +1,18 @@
+.myTasks {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.myTasks .taskView {
+    border-bottom: 1px solid #eeeeee;
+}
+.myTasks .taskView:last-child {
+    border-bottom: 0px;
+}
+
+.emptyList {
+    text-align: center;
+    padding: 50px 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
