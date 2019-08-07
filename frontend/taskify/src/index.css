@@ -1,13 +1,318 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+  margin: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.header {
+  margin: 20px 0px;
+}
+
+.header-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0px 20px;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Bahnschrift"!important;
+  font-weight: bold!important;
+}
+
+.logo:before {
+  content: "Taskify";
+}
+
+.header-inner > .logo {
+  color: #444;
+  font-size: 20px;
+  padding-right: 20px;
+  /* border-right: 1px solid#eeeeee; */
+  height: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu-items {
+  padding-left: 20px;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 13px;
+}
+
+.menu-items > .menu-item {
+  margin-right: 15px;
+}
+.menu-items > .menu-item:last-child {
+  margin-right: 0px;
+}
+
+.main-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.content-body {
+  margin-top: 50px;
+}
+
+.form-body-manager {
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid#eeeeee;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bahnschrift";
+}
+
+.form-body-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-body-title > h3 {
+  margin: 0px;
+}
+
+label {
+  font-size: 12px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.remember-me {
+  margin-bottom: 30px;
+}
+
+.form-body-submit {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.form-body-submit > .submit-button {
+  width: 100%;
+  outline: none;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px 10px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+}
+
+.form-body-submit > .login {
+  background-color: #007bff;
+}
+
+.primary-button {
+  flex: 2;
+}
+
+.secondary-button {
+  flex: 1;
+}
+
+.form-body-submit > span {
+  display: block;
+  flex: .5;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-body-submit > .register {
+  background-color: #6b6b6b;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.input-group .input-container {
+  margin: 0px 5px;
+}
+
+.input-group .input-container:first-child {
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+.input-group .input-container:last-child {
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+.input-container .form-text,
+.input-container .text-muted {
+  display: none;
+}
+
+.tasks-board {
+  position: relative;
+  margin: 0 auto;
+}
+
+.new-task-board {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.new-task-board-container {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 2px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-task-board .task {
+  width: 100%;
+  height: inherit;
+}
+
+.task > .task-input-controller {
+  border: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  outline: none;
+  height: inherit;
+}
+
+.new-task-board .create-task {
+  width: initial;
+  height: inherit;
+}
+
+.create-task > .add-task-btn {
+  outline: none;
+  border: 0px;
+  padding: 10px 20px;
+  height: inherit;
+  text-align: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #999999;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.add-task-btn.active {
+  background-color: #5c5c5c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon-left {
+  margin-left: 10px;
+}
+
+.icon-right {
+  margin-right: 10px
+}
+
+.my-tasks {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.my-tasks .task-view {
+  border-bottom: 1px solid #eeeeee;
+}
+.my-tasks .task-view:last-child {
+  border-bottom: 0px;
+}
+
+.task-view {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.task-view > .checklist {
+  padding: 10px 20px;
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  color: #444444;
+  cursor: pointer;
+}
+
+.check-not-complete,
+.check-complete {
+  text-decoration: none!important;
+}
+
+.checklist > .check-not-complete {
+  color: #444444;
+}
+.checklist > .check-not-complete:before {
+  content: "\f145";
+}
+
+.checklist > .check-complete {
+  color: #999999;
+}
+.checklist > .check-complete:before {
+  content: "\f146";   
+}
+
+.task-view > .task-details {
+  padding: 10px 10px;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #444444;
+}
+
+.task-details .task-completed {
+  color: #999999!important;
+  text-decoration: line-through!important;
+}
+
+.task-view > .task-controls {
+  padding: 10px 20px;
+  font-size: 11px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.empty-list {
+  text-align: center;
+  padding: 50px 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
