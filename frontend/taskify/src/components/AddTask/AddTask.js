@@ -2,17 +2,12 @@ import React from 'react';
 import classes from './AddTask.module.css';
 
 const addTask = (props) => {
-  let task = "";
-
-  const checkInput = (event) => {
-    task = event.target.value;
-  };
-
   const submit = (event) => {
     event.preventDefault();
+    let task = event.target.task.value;
     if (task !== "" && task !== " ") {
       props.addTask(task);
-      task = "";
+      event.target.task.value = "";
     }
   };
 
@@ -20,7 +15,7 @@ const addTask = (props) => {
     <div className={ classes.newTaskBoard }>
       <form className={ classes.newTaskBoardContainer } onSubmit={submit}>
         <div className={ classes.task }>
-          <input onChange={checkInput} className={ classes.taskInputController } name="task" type="text" placeholder="Add a task..." required autoFocus autoComplete="off" />
+          <input className={ classes.taskInputController } name="task" type="text" placeholder="Add a task..." required autoFocus autoComplete="off" />
         </div>
 
         <div className={ classes.createTask }>
