@@ -4,11 +4,11 @@ import Navbar from '../components/Navbar/Navbar';
 import Tasks from '../components/Tasks/Tasks';
 
 class App extends Component {
-  createTask = task => {
+  createTask = (task, completed) => {
     return (
       {
         task: task,
-        completed: false,
+        completed: completed,
         date: null,
         detail: ""
       }
@@ -17,13 +17,12 @@ class App extends Component {
   
   state = {
     taskList: [
-      this.createTask("Laudry"),
-      this.createTask("Fire puff bois")
+      this.createTask("Laudry", false),
+      this.createTask("Fire puff bois", true)
     ]
   };
 
-  addTask = event => {
-    const task = event.data.task;
+  addTask = task => {
     if (task && task !== "") {
       let newTaskList = [...this.state.taskList];
       newTaskList.push(this.createTask(task));
@@ -32,6 +31,23 @@ class App extends Component {
         taskList: newTaskList
       });
     }
+  };
+
+  changeCompleteStatus = id => {
+    let newTaskList = [...this.state.taskList];
+    const myTask = newTaskList[id];
+    myTask.completed = !myTask.completed;
+    this.setState({
+      taskList: newTaskList
+    });
+  };
+
+  removeTask = id => {
+    let newTaskList = [...this.state.taskList];
+    newTaskList.splice(id, 1);
+    this.setState({
+      taskList: newTaskList
+    });
   };
 
   render = () => {
@@ -43,6 +59,8 @@ class App extends Component {
           <Tasks
             tasks={this.state.taskList}
             addTask={this.addTask}
+            changeCompleteStatus={this.changeCompleteStatus}
+            removeTask={this.removeTask}
           />
         </div>
       </div>
