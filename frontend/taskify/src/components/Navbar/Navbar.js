@@ -5,12 +5,12 @@ const navbar = () => {
   return (
     <div className={ classes.header }>
       <div className={ classes.headerInner }>
-        <a className={ classes.logo }></a>
+        <button className={ classes.logo }></button>
 
         <div className={ classes.menuItems }>
-          <a className={ `btn btn-default btn-sm ${ classes.menuItem }` }>@awesomeuser</a>
+          <button className={ `btn btn-default btn-sm ${ classes.menuItem }` }>@awesomeuser</button>
 
-          <a style={{color: '#fff'}} className={ `btn btn-secondary btn-sm ${ classes.menuItem }` }>Logout</a>
+          <button style={{color: '#fff'}} className={ `btn btn-secondary btn-sm ${ classes.menuItem }` }>Logout</button>
         </div>
       </div>
     </div>
