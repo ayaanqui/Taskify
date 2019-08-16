@@ -17,6 +17,10 @@
     font-family: "Bahnschrift" !important;
     font-weight: bold !important;
     cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
 }
 
 .logo:before {
