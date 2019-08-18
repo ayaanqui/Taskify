@@ -19,7 +19,7 @@ class TaskListSerializer(serializers.ModelSerializer):
             'priority'
         ]
         read_only_fields = ['id', 'completed', 'user']
-    
+
     def get_user(self, obj):
         return UserSerializer(obj.user).data
 
@@ -38,7 +38,7 @@ class TaskDetailSerializer(serializers.ModelSerializer):
             'created',
             'due'
         ]
-    
+
     def get_user(self, obj):
         return UserSerializer(obj.user).data
 
